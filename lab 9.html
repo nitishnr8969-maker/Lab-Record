@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Responsive Web Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            font-size: 1rem;           
+        }
+        header {
+            background-color: #0077cc;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav {
+            background-color: #eee;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav a {
+            display: block;           
+            margin: 0.5rem 0;
+            text-decoration: none;
+            color: #333;
+        }
+        .container {
+            padding: 1rem;
+        }
+        .box {
+            background-color: #f2f2f2;
+            margin-bottom: 1rem;
+            padding: 1rem;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        @media (min-width: 600px) {
+            nav a {
+                display: inline-block;
+                margin: 0 1rem;
+            }
+            .container {
+                display: flex;
+                gap: 1rem;
+            }
+            .box {
+                width: 50%;           
+            }
+        }
+        @media (min-width: 900px) {
+            header {
+                font-size: 2vw;        
+            }
+            .box {
+                width: 33.33%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Responsive Web Page</h1>
+        <p>Mobile-First Design</p>
+    </header>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+    <div class="container">
+        <div class="box">Content Box 1</div>
+        <div class="box">Content Box 2</div>
+        <div class="box">Content Box 3</div>
+    </div>
+    <footer>
+        <p>© 2025 Responsive Design</p>
+    </footer>
+</body>
+</html>

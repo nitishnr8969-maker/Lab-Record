@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JavaScript Conditionals & Loops</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .box { border: 1px solid #333; padding: 12px; margin: 10px 0; }
+        h2 { margin-top: 0; }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Conditionals and Loops</h1>
+    <div class="box" id="conditionals"></div>
+    <div class="box" id="loops"></div>
+    <script>
+       
+        let marks = 65;
+        let resultText = "<h2>Conditional Statements</h2>";
+
+        if (marks >= 40) {
+            resultText += "If-Else: PASS (Marks = " + marks + ")<br>";
+        } else {
+            resultText += "If-Else: FAIL (Marks = " + marks + ")<br>";
+        }
+
+        let grade;
+        if (marks >= 75) grade = "A";
+        else if (marks >= 60) grade = "B";
+        else if (marks >= 40) grade = "C";
+        else grade = "F";
+
+        switch (grade) {
+            case "A":
+                resultText += "Switch: Grade A (Excellent)<br>";
+                break;
+            case "B":
+                resultText += "Switch: Grade B (Good)<br>";
+                break;
+            case "C":
+                resultText += "Switch: Grade C (Pass)<br>";
+                break;
+            default:
+                resultText += "Switch: Grade F (Fail)<br>";
+        }
+
+        document.getElementById("conditionals").innerHTML = resultText;
+
+        let loopText = "<h2>Looping Statements</h2>";
+
+        loopText += "For Loop (1 to 5): ";
+        for (let i = 1; i <= 5; i++) {
+            loopText += i + " ";
+        }
+        loopText += "<br>";
+
+        loopText += "While Loop (1 to 5): ";
+        let j = 1;
+        while (j <= 5) {
+            loopText += j + " ";
+            j++;
+        }
+        loopText += "<br>";
+
+        loopText += "Do-While Loop (1 to 5): ";
+        let k = 1;
+        do {
+            loopText += k + " ";
+            k++;
+        } while (k <= 5);
+
+        document.getElementById("loops").innerHTML = loopText;
+    </script>
+
+</body>
+</html>

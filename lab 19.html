@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Canvas Drawing</title>
+</head>
+<body>
+
+<h2>Simple Canvas Drawing</h2>
+
+<canvas id="myCanvas" width="400" height="250"
+        style="border:1px solid black;">
+</canvas>
+
+<script>
+    let canvas = document.getElementById("myCanvas");
+    let ctx = canvas.getContext("2d");
+
+    ctx.fillStyle = "lightblue";
+    ctx.fillRect(20, 20, 120, 80);
+
+    ctx.strokeStyle = "blue";
+    ctx.strokeRect(20, 20, 120, 80);
+
+    ctx.beginPath();
+    ctx.arc(250, 60, 40, 0, 2 * Math.PI);
+    ctx.fillStyle = "orange";
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.moveTo(50, 150);
+    ctx.lineTo(350, 150);
+    ctx.strokeStyle = "green";
+    ctx.stroke();
+</script>
+
+</body>
+</html>

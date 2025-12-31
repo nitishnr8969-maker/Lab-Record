@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Functions and Scope in JavaScript</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .box { border: 1px solid #333; padding: 12px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript: Functions and Scope</h1>
+
+    <div class="box" id="output"></div>
+
+    <script>
+       
+        var globalVar = "I am a global var";
+
+        function showScopes() {
+            let result = "";
+
+            var functionVar = "I am function scoped (var)";
+
+            if (true) {
+                let blockLet = "I am block scoped (let)";
+                const blockConst = "I am block scoped (const)";
+                result += blockLet + "<br>";
+                result += blockConst + "<br>";
+            }
+
+            result += functionVar + "<br>";
+            result += globalVar + "<br>";
+
+            return result;
+        }
+
+        function addNumbers(a, b) {
+            const sum = a + b;   
+            return sum;
+        }
+
+        let text = "<b>Scope Output:</b><br>";
+        text += showScopes();
+
+        text += "<br><b>Function Call Output:</b><br>";
+        text += "Addition Result = " + addNumbers(10, 20);
+
+        document.getElementById("output").innerHTML = text;
+    </script>
+
+</body>
+</html>

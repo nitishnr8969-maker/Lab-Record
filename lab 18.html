@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Create & Manipulate</title>
+    <style>
+        .item {
+            padding: 6px;
+            margin: 4px 0;
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Dynamic List</h2>
+
+<button onclick="addItem()">Add Item</button>
+<button onclick="modifyItem()">Modify Last Item</button>
+<button onclick="removeItem()">Remove Last Item</button>
+
+<ul id="list"></ul>
+
+<script>
+    let count = 1;
+
+    function addItem() {
+        let li = document.createElement("li");
+        li.textContent = "Item " + count;
+        li.classList.add("item");
+
+        document.getElementById("list").appendChild(li);
+        count++;
+    }
+
+    function modifyItem() {
+        let list = document.getElementById("list");
+        if (list.lastElementChild) {
+            list.lastElementChild.textContent = "Modified Item";
+            list.lastElementChild.style.backgroundColor = "orange";
+        }
+    }
+
+    function removeItem() {
+        let list = document.getElementById("list");
+        if (list.lastElementChild) {
+            list.removeChild(list.lastElementChild);
+        }
+    }
+</script>
+
+</body>
+</html>
